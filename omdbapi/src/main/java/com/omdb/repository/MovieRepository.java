@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface MovieRepository extends JpaRepository<Movie, Long> {
     Optional<Movie> findByImdbID(String imdbID);
     List<Movie> findByImdbIDIn(List<String> imdbIDs);
-    @Query(value = "SELECT * FROM postgres.fawry.movies " +
+    @Query(value = "SELECT * FROM railway.fawry.movies " +
             "WHERE (:imdbID = '' OR imdbID = :imdbID) " +
             "AND (:title = '' OR title ILIKE '%' || :title || '%') " +
             "AND (:year = '' OR year = :year) " +
